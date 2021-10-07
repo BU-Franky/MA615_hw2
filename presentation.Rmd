@@ -1,0 +1,54 @@
+---
+title: "presentation"
+author: "YifanZhang"
+date: "10/6/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Outward-facing file 
+
+```{r}
+source("wrangling_code.R", echo=TRUE)
+source("visulization_function.R", echo=TRUE)
+# notice: indicator can only be chosen from "life" or "income", otherwise, report error. 
+# Please type the right country names! otherwise, the function will report error. 
+# PS: you can click to open the 'data' in work place to check the name of country
+
+data_visulization(data, country1 = "United States", country2 = "Japan", indicator = "life")
+data_visulization(data, country1 = "United States", country2 = "Japan", indicator = "income")
+```
+
+# interesting part to notice
+Take a look at the first plot, where x-axis is year index and y-axis is life expectancy. In the plot, the red line represent Japan, green line represents United States and blue line represents world average life expectancy. On the whole, life expectancies of both two countries and world average have grown from under 40 to approximately 80. Additionaly, as developed countries, both United States and Japan' life expectancies are higher than world average. What's most interesting here is that, all of three lines experienced dramatic declines during the period 1914 to 1918 and 1939 to 1945. Once I check historical events, it is quite easy to explain because the first period and second period just happen to be the first and second world war. What's more, during the period of year 1860 to 1865, while the life expectancy of other countries are going on, this statistic of United States decreased sharply to nearly 30 years old. This time period happens to be Civil war. According to the plot, we could come to the conclusion that the wars show huge impacts on the life expectancy of human beings(negative effect).
+
+Then turn to the income(per person) plots, of course the plot is not as interesting as the previous one. However we can still extract some information that average upward level of world income has sped up since 1975. What's more, if we make a comparison between developing nd developed countries(showing in the following plot), it is clear that income of developed countries are far higher than developing countries.
+
+```{r}
+data_visulization(data, country1 = "United States", country2 = "China", indicator = "income")
+data_visulization(data, country1 = "United States", country2 = "India", indicator = "income")
+data_visulization(data, country1 = "Japan", country2 = "China", indicator = "income")
+data_visulization(data, country1 = "Japan", country2 = "India", indicator = "income")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
