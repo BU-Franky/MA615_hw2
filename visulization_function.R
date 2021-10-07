@@ -31,7 +31,7 @@ data_visulization <- function(data, country1, country2, indicator){
       summarize(mean = mean(income_per_person, na.rm = TRUE))
     mean_income <- data %>% group_by(year) %>%
       summarize(mean = mean(income_per_person, na.rm = TRUE))
-    mean_income <- data.frame(country = rep("world mean", dim(mean_income)[1]), year = mean_year$year, income_per_person = mean_income$mean)
+    mean_income <- data.frame(country = rep("world mean", dim(mean_income)[1]), year = mean_income$year, income_per_person = mean_income$mean)
     plot_data <- rbind(data.frame(country = data1$country, year = data1$year, income_per_person = data1$income_per_person),
                        data.frame(country = data2$country, year = data2$year, income_per_person = data2$income_per_person),
                        mean_income)
