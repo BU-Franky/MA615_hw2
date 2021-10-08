@@ -48,8 +48,3 @@ data_visulization <- function(data, country1, country2, indicator){
 
 
 
-
-
-
-
-
